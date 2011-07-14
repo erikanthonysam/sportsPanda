@@ -1,0 +1,35 @@
+<h1>Listing sportsbars</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sportsbars.each do |sportsbar| %>
+  <tr>
+    <td><%= sportsbar.name %></td>
+    <td><%= sportsbar.street %></td>
+    <td><%= sportsbar.city %></td>
+    <td><%= sportsbar.state %></td>
+    <td><%= sportsbar.zip %></td>
+    <td><%= sportsbar.email %></td>
+    <td><%= sportsbar.phone %></td>
+    <td><%= link_to 'Show', sportsbar %></td>
+    <td><%= link_to 'Edit', edit_sportsbar_path(sportsbar) %></td>
+    <td><%= link_to 'Destroy', sportsbar, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sportsbar', new_sportsbar_path %>

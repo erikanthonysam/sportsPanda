@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @sportsbar.name %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @sportsbar.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @sportsbar.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @sportsbar.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @sportsbar.zip %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @sportsbar.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @sportsbar.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_sportsbar_path(@sportsbar) %> |
+<%= link_to 'Back', sportsbars_path %>
