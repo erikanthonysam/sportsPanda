@@ -8,6 +8,7 @@ one:
   zip: 1
   email: MyString
   phone: 1
+  website: MyString
 
 two:
   name: MyString
@@ -17,3 +18,4 @@ two:
   zip: 1
   email: MyString
   phone: 1
+  website: MyString
