@@ -1,4 +1,6 @@
 Sportspanda::Application.routes.draw do
+  resources :games
+
   resources :sportsbars
 
   # The priority is based upon order of creation:
