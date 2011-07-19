@@ -1,7 +1,21 @@
 Sportspanda::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/venues"
+
+  get "pages/events"
+
+  get "pages/about"
+
   resources :games
 
   resources :sportsbars
+  
+  match '/venues',    :to => 'pages#venues'
+  match '/events',    :to => 'pages#events'
+  match '/about',     :to => 'pages#about'
+  
+  root                :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
