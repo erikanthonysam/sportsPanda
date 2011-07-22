@@ -7,6 +7,21 @@
     <h1>Sports Bars</h1>
     <p>
       Here are the sports bars.
+	<table>
+		
+		<% @venues.each do |venue| %>
+		  <tr>
+		    <td><%= venue.name %></td>
+		    <td><%= venue.street %></td>
+		    <td><%= venue.city %></td>
+		    <td><%= venue.state %></td>
+		    <td><%= venue.zip %></td>
+		    <td><%= venue.email %></td>
+		    <td><%= venue.phone %></td>
+		    <td><%= venue.website %></td>
+		  </tr>
+		<% end %>
+	  </table>
     </p>
   </body>
 </html>

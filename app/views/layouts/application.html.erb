@@ -2,12 +2,48 @@
 <html>
 <head>
   <title>sportsPanda | Find Games Fast</title>
+  <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
   <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+  
+  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
 </head>
 <body>
+	<div class="container">
+	      <header>
+	        <% logo = image_tag("logo.jpg", :alt => "sportsPanda", :class => "round") %>
+			<%= link_to logo, root_path %>
+	        <nav class="round">
+	          <ul>
+	            <li><%= link_to "Home", root_path %></li>
+	            <li><%= link_to "About", about_path %></li>
+	            <li><%= link_to "Login", '#' %></li>
+	          </ul>
+	        </nav>
+	      </header>
+	      <section class="round">
+	        <%= yield %>
+	      </section>
+	  </div>
+</body>
+<footer>
+  <nav class="round">
+    <ul>
+      <li><a href="http://sportspanda.wordpress.com">Blog</a></li>
+      <li><a href="http://twitter.com/sportspanda">Twitter</a></li>
+      <li><%= link_to "Register for free", new_sportsbar_path %>
+	
+    </ul>
+  </nav>
+</footer>
 
-<%= yield %>
+
+</html>
+
+	
+
 

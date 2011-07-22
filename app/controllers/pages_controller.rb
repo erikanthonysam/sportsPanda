@@ -3,9 +3,11 @@ class PagesController < ApplicationController
   end
 
   def venues
+    @venues = Sportsbar.all
   end
 
   def events
+    @events = Game.all
   end
 
   def about
