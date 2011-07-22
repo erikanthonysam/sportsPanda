@@ -142,4 +142,24 @@ footer nav {
   float: none;
 }
 
+#events_table {
+	font-size: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 15px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid orange;
+}
+
+#venues_table {
+	font-size: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 15px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid orange;
+	
+}
 

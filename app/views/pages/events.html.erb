@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>sportsPanda | Events</title>
+    <title>sportsPanda | Games</title>
   </head>
   <body>
-    <h1>Events</h1>
+    <h1>Sports Events / Games</h1>
     <p>
-      Here are the games / sports events.
-	 <table>
+      Choose the game you want to watch:
+	 <table id="events_table">
 		<% @events.each do |event| %>
 		  <tr>
 		    <td><%= event.name %></td>
