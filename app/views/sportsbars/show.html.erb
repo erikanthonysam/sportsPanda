@@ -41,11 +41,11 @@
 </p>
 
 <p>
-	<b>Games:</b>
+	<b>Games that <%= @sportsbar.name%> will be showing:</b>
 	<table id="profile_games">
 	<% @sportsbar.games.each do |game| %>
 	<tr>
-		<td><%= game.name%></td>
+		<td><%= link_to game.name, game %></td>
 		<td><%= game.sport%></td>
 		<td><%= game.date%></td>
 	</tr>
