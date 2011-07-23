@@ -1,4 +1,6 @@
 Sportspanda::Application.routes.draw do
+  get "game_profile/bar_results"
+
   get "pages/home"
 
   get "pages/venues"
@@ -14,6 +16,7 @@ Sportspanda::Application.routes.draw do
   match '/venues',    :to => 'pages#venues'
   match '/events',    :to => 'pages#events'
   match '/about',     :to => 'pages#about'
+  match '/game_profile/bar_results',    :to => 'game_profile#bar_results'
   
   root                :to => 'pages#home'
 

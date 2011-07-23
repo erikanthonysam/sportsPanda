@@ -1,6 +1,6 @@
 <h1>Sports Bars</h1>
 
-<table>
+<table id="sportsbars_table">
   <tr>
     <th>Name</th>
     <th>Street</th>
@@ -17,7 +17,7 @@
 
 <% @sportsbars.each do |sportsbar| %>
   <tr>
-    <td><%= sportsbar.name %></td>
+    <td><%= link_to sportsbar.name, sportsbar %></td>
     <td><%= sportsbar.street %></td>
     <td><%= sportsbar.city %></td>
     <td><%= sportsbar.state %></td>

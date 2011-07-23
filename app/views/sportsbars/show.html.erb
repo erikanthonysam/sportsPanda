@@ -42,7 +42,15 @@
 
 <p>
 	<b>Games:</b>
-	<%= @sportsbar.games %>
+	<table id="profile_games">
+	<% @sportsbar.games.each do |game| %>
+	<tr>
+		<td><%= game.name%></td>
+		<td><%= game.sport%></td>
+		<td><%= game.date%></td>
+	</tr>
+	<% end %>
+	</table>
 </p>
 
 <%= link_to 'Edit', edit_sportsbar_path(@sportsbar) %> |

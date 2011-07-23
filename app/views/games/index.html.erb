@@ -1,6 +1,6 @@
 <h1>Games / Sports Events</h1>
 
-<table>
+<table id="games_table">
   <tr>
     <th>Name</th>
     <th>Sport</th>
@@ -12,7 +12,7 @@
 
 <% @games.each do |game| %>
   <tr>
-    <td><%= game.name %></td>
+    <td><%= link_to game.name, game %></td>
     <td><%= game.sport %></td>
     <td><%= game.date %></td>
     <td><%= link_to 'Show', game %></td>

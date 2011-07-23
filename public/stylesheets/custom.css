@@ -1,5 +1,5 @@
 .container {
-  width: 800px;
+  width: 1000px;
   margin-left: auto;
   margin-right: auto; 
   font-family: arial;
@@ -132,7 +132,7 @@ a.venues_button {
 footer {
   text-align: center;
   margin-top: 10px;
-  width: 800px;
+  width: 1000px;
   margin-left: auto;
   margin-right: auto;
   font-family: arial;
@@ -142,7 +142,7 @@ footer nav {
   float: none;
 }
 
-#events_table {
+#games_table {
 	font-size: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -152,7 +152,27 @@ footer nav {
 	border: 2px solid orange;
 }
 
-#venues_table {
+#sportsbars_table {
+	font-size: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 15px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid orange;
+}
+
+#profile_bars {
+	font-size: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 15px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid orange;	
+}
+
+#profile_games {
 	font-size: 100%;
 	margin-left: auto;
 	margin-right: auto;

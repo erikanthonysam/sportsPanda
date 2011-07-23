@@ -16,9 +16,20 @@
 </p>
 
 <p>
-	<b>Sports Bars:</b>
-	<%= @game.sportsbars%>
+	<b>Sports Bars showing <%= @game.name %></b>
+	<table id="profile_bars">
+	<% @game.sportsbars.each do |bar|%>
+	<tr>
+		<td><%= bar.name%></td>
+		<td><%= bar.street%></td>
+		<td><%= bar.city%></td>
+		<td><%= bar.phone%></td>
+		<td><%= bar.website%>
+	</tr>
+	<% end %>
+	</table>
+			
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Edit', edit_game_path(@game) %> 
 <%= link_to 'Back', games_path %>

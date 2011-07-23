@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>sportsPanda | Games</title>
+    <title>sportsPanda | Find Games Fast</title>
   </head>
   <body>
     <h1>Sports Events / Games</h1>
@@ -10,7 +10,7 @@
 	 <table id="events_table">
 		<% @events.each do |event| %>
 		  <tr>
-		    <td><%= event.name %></td>
+		    <td><%= link_to event.name, game_profile_bar_results_path%></td>
 		    <td><%= event.sport %></td>
 		    <td><%= event.date %></td>
 		  </tr>
