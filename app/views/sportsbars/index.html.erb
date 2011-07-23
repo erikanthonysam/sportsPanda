@@ -27,7 +27,7 @@
     <td><%= sportsbar.website %></td>
     <td><%= link_to 'Show', sportsbar %></td>
     <td><%= link_to 'Edit', edit_sportsbar_path(sportsbar) %></td>
-    <td><%= link_to 'Destroy', sportsbar, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Destroy', sportsbar, :confirm => 'Are you sure?', :method => :delete%></td>
   </tr>
 <% end %>
 </table>
