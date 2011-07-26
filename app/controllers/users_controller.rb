@@ -41,9 +41,11 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.xml
+  
   def create
     @user = User.new(params[:user])
     if @user.save
+      sign_in @user
       flash[:success] = "Welcome to sportsPanda!"
       redirect_to @user
     else
@@ -51,9 +53,8 @@ class UsersController < ApplicationController
       render 'new' 
       end
     end      
-  end  
- 
-      
+  end 
+       
 
   # PUT /users/1
   # PUT /users/1.xml

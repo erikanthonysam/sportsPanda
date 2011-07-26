@@ -1,4 +1,8 @@
 Sportspanda::Application.routes.draw do
+  get "sessions/new"
+
+  get "session/new"
+
   get "users/new"
 
   get "game_profile/bar_results"
@@ -17,13 +21,18 @@ Sportspanda::Application.routes.draw do
   
   resources :users
   
+  resources :sessions, :only => [:new, :create, :destroy]
+    
   match '/venues',    :to => 'pages#venues'
   match '/events',    :to => 'pages#events'
   match '/about',     :to => 'pages#about'
   
   match '/signup',    :to => 'users#new'
+  match '/signin',     :to => 'sessions#new'
+  match '/signout',    :to => 'sessions#destroy'
   
   root                :to => 'pages#home'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
