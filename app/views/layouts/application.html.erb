@@ -13,6 +13,7 @@
   <%= stylesheet_link_tag 'custom', :media => 'screen' %>
   <%= javascript_include_tag :defaults %>
 </head>
+
 <body>
 	<div class="container">
 	      <header>
@@ -27,10 +28,14 @@
 	        </nav>
 	      </header>
 	      <section class="round">
+			 <% flash.each do |key, value| %>
+		          <div class="flash <%= key %>"><%= value %></div>
+		        <% end %>
 	        <%= yield %>
 	      </section>
 	  </div>
 </body>
+
 <footer>
   <nav class="round">
     <ul>
@@ -46,5 +51,3 @@
 </html>
 
 	
-
-
