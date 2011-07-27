@@ -4,12 +4,19 @@
       <h1>
         <%= @user.name %>
       </h1>
+	  <br>
+		<p>Get started and find your game!</p>
+		<br>
+		<%= link_to "Games", games_path, :class => "games_button round" %>
+		<%= link_to "Sports Bars", sportsbars_path, :class => "venues_button round" %>
+		<br />
+	  </br>
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= link_to @user.name, edit_user_path(@user) %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
       <strong>Email</strong> <%= @user.email %>
       
     </td>
   </tr>
 </table>
+

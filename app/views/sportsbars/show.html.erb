@@ -52,6 +52,7 @@
 	<% end %>
 	</table>
 </p>
-
+<% if signed_in? && current_user.admin? %>
 <%= link_to 'Edit', edit_sportsbar_path(@sportsbar) %> |
 <%= link_to 'Back', sportsbars_path %>
+<% end %>

@@ -25,13 +25,16 @@
     <td><%= sportsbar.email %></td>
     <td><%= sportsbar.phone %></td>
     <td><%= sportsbar.website %></td>
+	<% if signed_in? && current_user.admin? %>
     <td><%= link_to 'Show', sportsbar %></td>
     <td><%= link_to 'Edit', edit_sportsbar_path(sportsbar) %></td>
     <td><%= button_to 'Destroy', sportsbar, :confirm => 'Are you sure?', :method => :delete%></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<% if signed_in? && current_user.admin? %>
 <%= link_to 'New Sportsbar', new_sportsbar_path %>
+<% end %>
