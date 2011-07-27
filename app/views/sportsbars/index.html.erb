@@ -34,7 +34,8 @@
 <% end %>
 </table>
 
-<br />
+<br>
 <% if signed_in? && current_user.admin? %>
 <%= link_to 'New Sportsbar', new_sportsbar_path %>
+<br />
 <% end %>

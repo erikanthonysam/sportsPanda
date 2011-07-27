@@ -26,6 +26,7 @@
 
 
 <% if signed_in? && current_user.admin? %>
+<br>
 <%= link_to 'New Game', new_game_path %>
-
+<br />
 <% end %>
