@@ -10,7 +10,8 @@
 		<%= link_to "Games", games_path, :class => "games_button round" %>
 		<%= link_to "Sports Bars", sportsbars_path, :class => "venues_button round" %>
 		<br />
-	  </br>
+	  </br>	<p><%= link_to "Register your bar here", new_sportsbar_path %></p>
+	
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= link_to @user.name, edit_user_path(@user) %><br />

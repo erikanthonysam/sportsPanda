@@ -15,6 +15,9 @@
     <td><%= link_to game.name, game %></td>
     <td><%= game.sport %></td>
     <td><%= game.date %></td>
+    <% if signed_in? %>
+    <td><%= button_to 'Add Game', '#' %></td>
+	<% end %>
     <% if signed_in? && current_user.admin? %>
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>

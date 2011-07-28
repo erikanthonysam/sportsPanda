@@ -3,7 +3,8 @@ class GamesController < ApplicationController
   # GET /games.xml
   def index
     @games = Game.all
-
+    
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @games }

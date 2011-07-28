@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   validates :password, :presence     => true,
                        :confirmation => true,
                        :length       => { :within => 6..40 }
+  
+  has_and_belongs_to_many :sportsbars
                        
   before_save :encrypt_password
   

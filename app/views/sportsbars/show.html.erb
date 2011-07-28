@@ -52,7 +52,12 @@
 	<% end %>
 	</table>
 </p>
+
 <% if signed_in? && current_user.admin? %>
 <%= link_to 'Edit', edit_sportsbar_path(@sportsbar) %> |
 <%= link_to 'Back', sportsbars_path %>
+<% end %>
+
+<% if signed_in? %>
+<%= link_to 'Add Games', games_path %>
 <% end %>
