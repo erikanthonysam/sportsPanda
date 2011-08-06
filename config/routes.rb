@@ -1,4 +1,10 @@
 Sportspanda::Application.routes.draw do
+  resources :line_items
+
+  get "schedule/index"
+
+  resources :upcoming_games
+
   resources :schedules
 
   get "sessions/new"
@@ -23,17 +29,13 @@ Sportspanda::Application.routes.draw do
   resources :users
   
   resources :sessions, :only => [:new, :create, :destroy]
-  
-  resources :schedules
- 
+   
   match '/about',     :to => 'pages#about'
   
   match '/signup',    :to => 'users#new'
   match '/signin',     :to => 'sessions#new'
   match '/signout',    :to => 'sessions#destroy'
-  
-  match 'schedules/:id', :to => 'schedules#index'
-  
+    
   root                :to => 'pages#home'
   
 

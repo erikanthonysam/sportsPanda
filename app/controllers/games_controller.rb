@@ -3,12 +3,19 @@ class GamesController < ApplicationController
   # GET /games.xml
   def index
     @games = Game.all
-    
-    
+        
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @games }
     end
+  end
+  
+  def add_game
+    game = Game.find(params[:id])
+    @user = User.find(params[:user_id])
+    @user.games << game
+    @user.save
+    redirect_to user_path
   end
 
   # GET /games/1

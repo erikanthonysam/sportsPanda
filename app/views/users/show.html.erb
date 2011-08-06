@@ -5,12 +5,13 @@
         <%= @user.name %>
       </h1>
 	  <br>
-		<p>Get started and find your game!</p>
+		<p>Here are the games that we are showing:</p>
 		<br>
-		<%= link_to "Games", games_path, :class => "games_button round" %>
-		<%= link_to "Sports Bars", sportsbars_path, :class => "venues_button round" %>
+		<% @user.line_items.each do |item| %>
+		 <l1><%= item.game.name %></li>
+		<% end %>
 		<br />
-	  </br>	<p><%= link_to "Register your bar here", new_sportsbar_path %></p>
+	  <td><%= link_to 'Add Games', :controller => "schedule", :action => "index" %>
 	
     </td>
     <td class="sidebar round">

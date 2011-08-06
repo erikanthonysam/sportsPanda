@@ -18,13 +18,10 @@
 <p>
 	<b>Sports Bars showing <%= @game.name %></b>
 	<table id="profile_bars">
-	<% @game.sportsbars.each do |bar|%>
+	<% @game.line_items.each do |item|%>
 	<tr>
-		<td><%= link_to bar.name, bar%></td>
-		<td><%= bar.street%></td>
-		<td><%= bar.city%></td>
-		<td><%= bar.phone%></td>
-		<td><%= bar.website%>
+		<td><%= link_to item.user.name, :controller => "users", :action => "show", :id => item.user %></td>
+		
 	</tr>
 	<% end %>
 	</table>
