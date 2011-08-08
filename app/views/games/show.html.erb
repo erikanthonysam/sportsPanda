@@ -21,6 +21,11 @@
 	<% @game.line_items.each do |item|%>
 	<tr>
 		<td><%= link_to item.user.name, :controller => "users", :action => "show", :id => item.user %></td>
+		<td><%= item.user.street %></td>
+		<td><%= item.user.city %></td>
+		<td><%= item.user.state %></td>
+		<td><%= item.user.zip %></td>
+		<td><%= item.user.phone %></td>
 		
 	</tr>
 	<% end %>

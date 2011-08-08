@@ -8,7 +8,9 @@
 		<p>Here are the games that we are showing:</p>
 		<br>
 		<% @user.line_items.each do |item| %>
-		 <l1><%= item.game.name %></li>
+		 <l1><%= item.game.name %></li><br />
+		 <li><%= item.game.date %></li><br />
+			
 		<% end %>
 		<br />
 	  <% if current_user?(@user) %>
@@ -17,8 +19,14 @@
 	
     </td>
     <td class="sidebar round">
-      <strong>Name</strong> <%= link_to @user.name, edit_user_path(@user) %><br />
-      <strong>Email</strong> <%= @user.email %>
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>Email</strong> <%= @user.email %><br />
+      <strong>Street</strong> <%= @user.street %><br />
+	  <strong>City</strong> <%= @user.city %><br />
+	  <strong>State</strong> <%= @user.state %><br />
+	  <strong>Zip</strong> <%= @user.zip %><br />
+	  <strong>Phone</strong> <%= @user.phone%><br />
+	  <strong>Website</strong> <%= @user.website %><br />
       
     </td>
   </tr>

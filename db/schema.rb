@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110731185459) do
+ActiveRecord::Schema.define(:version => 20110808195831) do
 
   create_table "games", :force => true do |t|
     t.string   "name"
@@ -58,6 +58,12 @@ ActiveRecord::Schema.define(:version => 20110731185459) do
     t.string   "encrypted_password"
     t.string   "salt"
     t.boolean  "admin",              :default => false
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.integer  "phone"
+    t.string   "website"
   end
 
 end
