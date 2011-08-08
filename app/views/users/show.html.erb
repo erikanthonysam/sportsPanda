@@ -8,8 +8,9 @@
 		<p>Here are the games that we are showing:</p>
 		<br>
 		<% @user.line_items.each do |item| %>
-		 <l1><%= item.game.name %></li><br />
-		 <li><%= item.game.date %></li><br />
+		
+		 <l1><%= item.game.name %><br>
+		 <li><%= item.game.date.strftime("%H:%M - %a %b %d") %></li><br />
 			
 		<% end %>
 		<br />

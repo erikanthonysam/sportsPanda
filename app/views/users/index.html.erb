@@ -3,7 +3,6 @@
 <table id="users_table">
   <tr>
     <th>Name</th>
-    <th>Email</th>
     <th>Street</th>
     <th>City</th>
     <th>State</th>
@@ -14,8 +13,8 @@
 
 <% @users.each do |user| %>
   <tr>
+	<% unless user.admin? == true %>
     <td><%= link_to user.name, user %></td>
-    <td><%= user.email %></td>
     <td><%= user.street %></td>
     <td><%= user.city %></td>
     <td><%= user.state %></td>
@@ -27,11 +26,13 @@
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
+   <% end %>
   </tr>
 <% end %>
 </table>
 
-<br />
+<br>
 <% if signed_in? && current_user.admin? %>
 	<%= link_to 'New User', new_user_path %>
 <% end %>
+<br />

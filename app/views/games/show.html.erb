@@ -12,12 +12,20 @@
 
 <p>
   <b>Date:</b>
-  <%= @game.date %>
+  <%= @game.date.strftime("%H:%M - %a %b %d") %>
 </p>
 
 <p>
 	<b>Sports Bars showing <%= @game.name %></b>
 	<table id="profile_bars">
+	<tr>
+		<th>Name</th>
+		<th>Street</th>
+		<th>City</th>
+		<th>State</th>
+		<th>Zip</th>
+		<th>Phone</th>
+	</tr>
 	<% @game.line_items.each do |item|%>
 	<tr>
 		<td><%= link_to item.user.name, :controller => "users", :action => "show", :id => item.user %></td>

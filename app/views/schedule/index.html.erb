@@ -1,7 +1,7 @@
-<h1>Schedule#index</h1>
-<p>Find me in app/views/schedule/index.html.erb</p>
+<h1>Game Schedule</h1>
 
 <% @games.each do |game| %>
 	<%= game.name %>
+	<%= game.date.strftime("%H:%M - %a %b %d") %>
 	<%= button_to 'Add Game', line_items_path(:game_id => game )%>
 <% end %>
