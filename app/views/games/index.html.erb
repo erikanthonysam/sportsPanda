@@ -11,16 +11,18 @@
   </tr>
 
 <% @games.each do |game| %>
+<% if game.date > Time.now + 21600 %>
   <tr>
     <td><%= link_to game.name, game %></td>
     <td><%= game.sport %></td>
-    <td><%= game.date.strftime("%H:%M - %a %b %d") %></td>
+    <td><%= game.date.strftime("%I:%M %P %Z - %a %b %d") %></td>
     <% if signed_in? && current_user.admin? %>
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
     <td><%= button_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
+  <% end %>
   <% end %>  
 </table>
 
