@@ -1,9 +1,11 @@
 <h1>Game Schedule</h1>
 
 <% @games.each do |game| %>
-<% if game.date > Time.now + 21600 %>
+<% if game.date > Time.now - 21600 %>
 	<%= game.name %>
 	<%= game.date.strftime("%I:%M %Z - %a %b %d") %>
-	<%= button_to 'Add Game', line_items_path(:game_id => game )%>
+		
+	<%= button_to 'Add Game', line_items_path( :game_id => game )%>
+	
 <% end %>
 <% end %>

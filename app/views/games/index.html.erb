@@ -4,14 +4,14 @@
   <tr>
     <th>Name</th>
     <th>Sport</th>
-    <th>Date</th>
+    <th>Time/Date</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @games.each do |game| %>
-<% if game.date > Time.now + 21600 %>
+<% if game.date > Time.now - 21600 %>
   <tr>
     <td><%= link_to game.name, game %></td>
     <td><%= game.sport %></td>
