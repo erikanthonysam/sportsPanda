@@ -5,7 +5,7 @@
 	<%= game.name %>
 	<%= game.date.strftime("%I:%M %Z - %a %b %d") %>
 		
-	<%= button_to 'Add Game', line_items_path( :game_id => game )%>
+	<%= button_to 'Add Game', line_items_path( :game_id => game ), :class => "add_button round"%>
 	
 <% end %>
 <% end %>

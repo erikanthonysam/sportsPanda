@@ -2,20 +2,22 @@
   <tr>
     <td class="main">
       <h1>
-        <%= @user.name %>
+        <%= @title %>
       </h1>
-     
-	  <br>	
+	<% unless @user.line_items.empty? %>
+     <p>Last updated: <%= time_ago_in_words(@user.line_items.last.created_at)%> ago</p>
+	<% end %>
+	  
 		
 		<p>Here are the games that we are showing:</p>
-		<br>
+		
 
 		<% @user.line_items.each do |item| %>
 		<% if item.game.date > Time.now - 21600 %>
 		 <l1><%= item.game.name %><br>
 		 <li><%= item.game.date.strftime("%I:%M %P %Z - %a %b %d") %></li><br />
 		<% if current_user?(@user) %>
-		<%= button_to 'Remove Game', item, :method => :delete %>
+		<%= button_to 'Remove Game', item, :method => :delete, :class => "remove_button round" %>
 		<% end %>
 		<% end %>
 		<% end %>
@@ -23,17 +25,14 @@
 	
     </td>
     <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>Email</strong> <%= @user.email %><br />
-      <strong>Street</strong> <%= @user.street %><br />
-	  <strong>City</strong> <%= @user.city %><br />
-	  <strong>State</strong> <%= @user.state %><br />
-	  <strong>Zip</strong> <%= @user.zip %><br />
-	  <strong>Phone</strong> <%= @user.phone%><br />
-	  <strong>Website</strong> <%= @user.website %><br />
+      <strong><%= @user.name %></strong><br />
+      <%= @user.street %><br />
+	  <%= @user.city %>, <%= @user.state %> <%= @user.zip %><br />
+	  <%= @user.phone%><br />
+	  <%= link_to @user.website, "http://#{@user.website}", :target => "_blank" %><br />
     <br>  
 	<% if current_user?(@user) %>
-	  <%= link_to 'Add Games', :controller => "schedule", :action => "index" %>
+	  <%= button_to 'Add Games', {:controller => "schedule", :action => "index"}, :method => :get, :class => "schedule_button round"  %>
 	  <% end %>
 	<br />
     </td>

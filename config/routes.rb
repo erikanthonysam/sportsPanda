@@ -28,14 +28,14 @@ Sportspanda::Application.routes.draw do
   
   resources :sessions, :only => [:new, :create, :destroy]
    
-  match '/about',     :to => 'pages#about'
+  match '/about',       :to => 'pages#about'
   
-  match '/signup',    :to => 'users#new'
-  match '/signin',     :to => 'sessions#new'
-  match '/signout',    :to => 'sessions#destroy'
+  match '/signup',      :to => 'users#new'
+  match '/signin',      :to => 'sessions#new'
+  match '/signout',     :to => 'sessions#destroy'
   match '/schedule',    :to => 'schedule#index'
     
-  root                :to => 'pages#home'
+  root                  :to => 'pages#home'
   
 
   # The priority is based upon order of creation:
