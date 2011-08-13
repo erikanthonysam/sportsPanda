@@ -49,7 +49,7 @@ class LineItemsController < ApplicationController
         format.html { redirect_to(@line_item.user, :notice => 'Game added!') }
         format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to(@line_item.user, :notice => "You've already added this game!") }
         format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
       end
     end
