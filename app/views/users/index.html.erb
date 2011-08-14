@@ -12,7 +12,7 @@
   <tr>
 	<% unless user.admin? == true %>
     <td><%= link_to user.name, user %></td>
-    <td><%= user.street %>,<%= user.city %>, <%= user.state %>, <%= user.zip %></td>
+    <td><%= user.street %>, <%= user.city %>, <%= user.state %>, <%= user.zip %></td>
     <td><%= user.phone %></td>
     <td><%= user.website %></td>
     <% if signed_in? && current_user.admin? %>

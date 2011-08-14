@@ -16,9 +16,7 @@ class User < ActiveRecord::Base
   validates :password, :presence     => true,
                        :confirmation => true,
                        :length       => { :within => 6..40 }
-  
-  has_and_belongs_to_many :sportsbars
-  
+    
   has_and_belongs_to_many :games
   
   has_many :line_items

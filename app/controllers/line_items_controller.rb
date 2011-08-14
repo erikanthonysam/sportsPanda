@@ -1,4 +1,7 @@
 class LineItemsController < ApplicationController
+  
+  before_filter :authenticate
+  before_filter :admin_user, :only => :index
   # GET /line_items
   # GET /line_items.xml
   def index
