@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110808195831) do
+ActiveRecord::Schema.define(:version => 20110823190133) do
 
   create_table "games", :force => true do |t|
-    t.string   "name"
-    t.string   "sport"
-    t.datetime "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.string    "sport"
+    t.timestamp "date"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "games_sportsbars", :id => false, :force => true do |t|
@@ -31,23 +31,28 @@ ActiveRecord::Schema.define(:version => 20110808195831) do
   end
 
   create_table "line_items", :force => true do |t|
-    t.integer  "game_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "game_id"
+    t.integer   "user_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "sportsbars", :force => true do |t|
-    t.string   "name"
-    t.string   "street"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.string   "email"
-    t.integer  "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "website"
+    t.string    "name"
+    t.string    "street"
+    t.string    "city"
+    t.string    "state"
+    t.integer   "zip"
+    t.string    "email"
+    t.integer   "phone"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "website"
+  end
+
+  create_table "sportsbars_users", :id => false, :force => true do |t|
+    t.integer "sportsbar_id"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|
@@ -62,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20110808195831) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "website"
   end
 

@@ -28,7 +28,7 @@
       <strong><%= @user.name %></strong>
       <br><%= @user.street %>
 	  <br><%= @user.city %>, <%= @user.state %> <%= @user.zip %>
-	  <br><%= @user.phone  %>
+	  <br><%= number_to_phone(@user.phone)  %>
 	  <br><%= link_to @user.website, "http://#{@user.website}", :target => "_blank" %><br />
     <br>  
 	<% if current_user?(@user) %>
