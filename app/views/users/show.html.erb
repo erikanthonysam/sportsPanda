@@ -13,7 +13,7 @@
 		
 
 		<% @user.line_items.each do |item| %>
-		<% if item.game.date > Time.now - 21600 %>
+		<li><% if item.game.date > Time.now - 21600 %>
 		 <%= item.game.name %>:
 		 <%= item.game.date.strftime("%a, %b %d - %I:%M %P %Z") %>
 		<% if current_user?(@user) %>
