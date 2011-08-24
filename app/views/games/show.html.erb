@@ -12,11 +12,11 @@
 
 <p>
   <b>Date/Time:</b>
-  <%= @game.date.strftime("%I:%M %P %Z - %a %b %d") %>
+  <%= @game.date.strftime("%a, %b %d - %I:%M %P %Z") %>
 </p>
 
 <p>
-	<b>Sports Bars showing <%= @game.name %></b>
+	<b>Here are places showing <%= @game.name %>:</b>
 	<table id="profile_bars">
 	<tr>
 		<th>Bar Name</th>

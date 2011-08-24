@@ -29,6 +29,7 @@ Sportspanda::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
    
   match '/about',       :to => 'pages#about'
+  match '/contact',     :to => 'pages#contact'
   
   match '/signup',      :to => 'users#new'
   match '/signin',      :to => 'sessions#new'

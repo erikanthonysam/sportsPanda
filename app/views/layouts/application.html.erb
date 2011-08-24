@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>sportsPanda | Find Games Fast</title>
+  <title>ChanneltheGame | Find Games Fast</title>
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
   <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
@@ -17,12 +17,12 @@
 <body>
 	<div class="container">
 	      <header>
-	        <% logo = image_tag("logo.jpg", :alt => "sportsPanda", :class => "round") %>
+	        <% logo = image_tag("ctg_logo_tv.jpg", :alt => "ChanneltheGame", :class => "round") %>
 			<%= link_to logo, root_path %>
 	        <nav class="round">
 	          <ul>
 	            <li><%= link_to "Games", games_path %></li>
-				<li><%= link_to "SportsBars", users_path%></li>
+				<li><%= link_to "Sports Bars", users_path%></li>
 				<% if signed_in? %>
 				<li><%= link_to "My Profile", current_user %></li>
 				<li><%= link_to "Settings", edit_user_path(current_user) %></li>
@@ -48,6 +48,7 @@
   <nav class="round">
     <ul>
 	  <li><%= link_to "About", about_path %></li>
+	  <li><%= link_to "Contact Us", contact_path %></li>
       <li><a href="http://sportspanda.wordpress.com">Blog</a></li>
       <li><a href="http://twitter.com/sportspanda">Twitter</a></li>
       

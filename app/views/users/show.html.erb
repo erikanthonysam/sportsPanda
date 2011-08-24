@@ -9,15 +9,16 @@
 	<% end %>
 	  
 		
-		<p>Here are the games that we are showing:</p>
+		<br><h2>These are the games on our schedule:</h2>
 		
 
 		<% @user.line_items.each do |item| %>
 		<% if item.game.date > Time.now - 21600 %>
-		 <l1><%= item.game.name %><br>
-		 <li><%= item.game.date.strftime("%I:%M %P %Z - %a %b %d") %></li><br />
+		 <%= item.game.name %>:
+		 <%= item.game.date.strftime("%a, %b %d - %I:%M %P %Z") %>
 		<% if current_user?(@user) %>
-		<%= button_to 'Remove Game', item, :method => :delete, :class => "remove_button round" %>
+		<%= button_to 'Remove this Game', item, :method => :delete, :class => "remove_button" %>
+		<br>
 		<% end %>
 		<% end %>
 		<% end %>
@@ -32,7 +33,7 @@
 	  <br><%= link_to @user.website, "http://#{@user.website}", :target => "_blank" %><br />
     <br>  
 	<% if current_user?(@user) %>
-	  <%= button_to 'Add Games', {:controller => "schedule", :action => "index"}, :method => :get, :class => "schedule_button round"  %>
+	  <%= button_to 'Add More Games', {:controller => "schedule", :action => "index"}, :method => :get, :class => "schedule_button round"  %>
 	  <% end %>
 	<br />
     </td>

@@ -1,12 +1,12 @@
 .container {
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto; 
-  font-family: arial;
+  width: 1100px;
+  margin-left: 10%;
+  margin-right: 10%; 
+  font-family: Verdana;
 }
 
 body {
-  background: #b0c4de;
+  background: #FFFFFF;
 }
 
 header {
@@ -20,9 +20,11 @@ header img {
 
 section {
   margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 100%;
-  padding: 10px;
-  background: #fff;
+  padding: 50px;
+  background: #F4F4F4;
 }
 
 section h1 {
@@ -64,7 +66,7 @@ nav {
   background-color: white;
   padding: 0 0.7em;
   white-space: nowrap;
-  font-size: 100%;
+  font-size: 140%;
 }
 
 nav ul {
@@ -95,12 +97,12 @@ nav ul li a:hover {
 /* Games and Sports bar button */
 
 a.games_button {
-  margin-left: 20%;
+  margin-left: 15%;
   margin-right: auto;
   float: left;
   display: block;
   text-align: center;
-  width: 150px;
+  width: 250px;
   color: #fff;
   background: #FF9900;
   font-size: 200%;
@@ -110,10 +112,10 @@ a.games_button {
 
 a.venues_button {
   margin-left: auto;
-  margin-right: 20%;
+  margin-right: 15%;
   display: block;
   text-align: center;
-  width: 150px;
+  width: 250px;
   color: #fff;
   background: #FF9900;
   font-size: 200%;
@@ -136,7 +138,7 @@ footer {
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  font-family: arial;
+  font-family: Verdana;
 }
 
 footer nav {
@@ -257,3 +259,9 @@ div.field, div.actions {
 #about {
 	font-size: 20px;
 }
+
+.button {
+	text-align: right;
+	color: #fff;
+}
+

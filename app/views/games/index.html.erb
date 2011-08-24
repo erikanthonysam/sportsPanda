@@ -15,7 +15,7 @@
   <tr>
     <td><%= link_to game.name, game %></td>
     <td><%= game.sport %></td>
-    <td><%= game.date.strftime("%I:%M %P %Z - %a %b %d") %></td>
+    <td><%= game.date.strftime("%a, %b %d - %I:%M %P %Z") %></td>
     <% if signed_in? && current_user.admin? %>
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
