@@ -198,6 +198,7 @@ table.profile {
 td.main {
   width: 70%;
   padding: 1em;
+  font-size: 140%;
 }
 
 td.sidebar {
