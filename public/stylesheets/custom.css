@@ -146,7 +146,7 @@ footer nav {
 }
 
 #games_table {
-	font-size: 100%;
+	font-size: 150%;
 	margin-left: auto;
 	margin-right: auto;
 	border-spacing: 15px;
@@ -156,7 +156,7 @@ footer nav {
 }
 
 #users_table {
-	font-size: 100%;
+	font-size: 150%;
 	margin-left: auto;
 	margin-right: auto;
 	border-spacing: 15px;
@@ -166,7 +166,7 @@ footer nav {
 }
 
 #profile_bars {
-	font-size: 100%;
+	font-size: 150%;
 	margin-left: auto;
 	margin-right: auto;
 	border-spacing: 15px;
@@ -192,6 +192,7 @@ footer nav {
 table.profile {
   width: 100%;
   margin-bottom: 0;
+  font-size: 125;
 }
 
 td.main {
@@ -204,6 +205,7 @@ td.sidebar {
   padding: 1em;
   vertical-align: top;
   background: #ffc;
+  font-size: 125%;
 }
 
 

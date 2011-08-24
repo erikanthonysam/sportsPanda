@@ -1,22 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Game:</b>
-  <%= @game.name %>
-</p>
+<h1>
+  Places showing <b><%= @game.name %></b> - <%= @game.date.strftime("%a, %b %d - %I:%M %P %Z") %>
+  
+</h1>
 
-<p>
-  <b>Sport:</b>
-  <%= @game.sport %>
-</p>
-
-<p>
-  <b>Date/Time:</b>
-  <%= @game.date.strftime("%a, %b %d - %I:%M %P %Z") %>
-</p>
-
-<p>
-	<b>Here are places showing <%= @game.name %>:</b>
+<br>
 	<table id="profile_bars">
 	<tr>
 		<th>Bar Name</th>
