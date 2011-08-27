@@ -1,7 +1,8 @@
 <h1><b>Find out what games are showing at these sports bars:</b></h1>
 
 <table id="users_table">
-  <tr>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  
     <th>Name</th>
     <th>Address</th>
     <th>Phone</th>
@@ -9,7 +10,6 @@
   </tr>
 
 <% @users.each do |user| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 	<% unless user.admin? == true %>
     <td><%= link_to user.name, user %></td>
     <td><%= user.street %>, <%= user.city %>, <%= user.state %>, <%= user.zip %></td>
