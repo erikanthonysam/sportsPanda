@@ -35,6 +35,7 @@
 			<%= link_to logo, root_path %>
 	        <nav class="round">
 	          <ul>
+				<li><%= link_to 'Home', root_path %></li>
 	            <li><%= link_to "Games", games_path %></li>
 				<li><%= link_to "Sports Bars", users_path%></li>
 				<% if signed_in? %>
@@ -44,7 +45,7 @@
 				<% if signed_in? %>
 				<li><%= link_to "Logout", signout_path, :method => :delete %></li>
 				<% else %>
-				<li><%= link_to "Signin", signin_path %></li>
+				<li><%= link_to "Login", signin_path %></li>
 	            <% end %>
 	          </ul>
 	        </nav>
@@ -56,6 +57,30 @@
 	        <%= yield %>
 	      </section>
 	  </div>
+	<script type="text/javascript" charset="utf-8">
+	  var is_ssl = ("https:" == document.location.protocol);
+	  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+	  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+
+	<script type="text/javascript" charset="utf-8">
+	  var feedback_widget_options = {};
+
+	  feedback_widget_options.display = "overlay";  
+	  feedback_widget_options.company = "channelthegame";
+	  feedback_widget_options.placement = "left";
+	  feedback_widget_options.color = "#222";
+	  feedback_widget_options.style = "idea";
+
+
+
+
+
+
+
+
+	  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+	</script>
 </body>
 
 <footer>
@@ -63,8 +88,8 @@
     <ul>
 	  <li><%= link_to "About", about_path %></li>
 	  <li><%= link_to "Contact Us", contact_path %></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Twitter</a></li>
+      <li><%= link_to "Blog", "http://channelthegame.wordpress.com", :target => "_blank" %></li>
+      <li><%= link_to "Twitter", "http://twitter.com/#!/channeltgame", :target => "_blank" %></li>
       
 	
     </ul>
