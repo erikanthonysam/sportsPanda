@@ -12,7 +12,7 @@
 
 <% @games.each do |game| %>
 <% if game.date > Time.now - 21600 %>
-  <tr>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
     <td><%= link_to game.name, game %></td>
     <td><%= game.sport %></td>
     <td><%= game.date.strftime("%a, %b %d - %I:%M %P %Z") %></td>
