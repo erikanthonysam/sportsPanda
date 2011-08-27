@@ -46,6 +46,7 @@
 				<li><%= link_to "Logout", signout_path, :method => :delete %></li>
 				<% else %>
 				<li><%= link_to "Login", signin_path %></li>
+				<li><%= link_to "Sign up", signup_path, {:style=>'color:#FF0000;', :class => "css_class"} %></li>
 	            <% end %>
 	          </ul>
 	        </nav>
