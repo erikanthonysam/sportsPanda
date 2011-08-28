@@ -11,11 +11,11 @@
 		
 		<br><h2>Games we will be showing:</h2>
 		
-
+		<ol>
 		<% @user.line_items.each do |item| %>
-		<li><% if item.game.date > Time.now - 21600 %>
-		 <%= item.game.name %>:
-		 <%= item.game.date.strftime("%a, %b %d - %I:%M %P %Z") %>
+		<% if item.game.date > Time.now - 21600 %>
+		<li><%= item.game.name %>:
+		<%= item.game.date.strftime("%a, %b %d - %I:%M %P %Z") %></li>
 		<% if current_user?(@user) %>
 		<%= button_to 'Remove this Game', item, :method => :delete, :class => "remove_button" %>
 		<br>
