@@ -2,7 +2,7 @@
   <tr>
     <td class="main">
       <h1>
-        <%= @title %>
+        <b><%= @title %></b>
       </h1>
 	<% unless @user.line_items.empty? %>
      <p>Last updated: <%= time_ago_in_words(@user.line_items.last.created_at)%> ago</p>
