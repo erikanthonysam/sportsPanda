@@ -1,12 +1,12 @@
-<h1>Game Schedule</h1>
+<h1><b>Game Schedule</b></h1>
 <h2>Add the games that you'll be showing</h2>
 <br>
 <% @games.each do |game| %>
 <% if game.date > Time.now - 21600 %>
 	<%= game.name %>:
 	<%= game.date.strftime("%a, %b %d - %I:%M %Z") %>
-	<%= button_to 'Add this Game', line_items_path( :game_id => game ), :class => "schedule_button"%>
+	<%= button_to 'Add this Game', line_items_path( :game_id => game ) %>
 	<br>
-	
+
 <% end %>
 <% end %>
