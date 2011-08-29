@@ -11,7 +11,7 @@
 	<% if @user.line_items.empty? && current_user?(@user) %>
     <br><h3>Add Games Here: </h3>
 	<%= button_to 'Add More Games', {:controller => "schedule", :action => "index"}, :method => :get %>
-	<% elsif @user.line_items.empty? %>
+	<% elsif @user.line_items.count == 0 %>
 	<br><h3>No games added yet.  
 	<% else %>      
 	<br><h3>Games we will be showing:</h3>
