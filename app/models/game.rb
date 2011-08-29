@@ -3,7 +3,7 @@ class Game < ActiveRecord::Base
   validates :sport,  :presence => true
   validates :date,   :presence => true
     
-  has_and_belongs_to_many :users
+  has_many :users, :through => :line_items
   
   has_many :line_items, :dependent => :destroy
   

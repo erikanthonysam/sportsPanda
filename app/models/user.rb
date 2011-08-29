@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
                        :confirmation => true,
                        :length       => { :within => 6..40 }
     
-  has_and_belongs_to_many :games
+  has_many :games, :through => :line_items
   
   has_many :line_items
                        
