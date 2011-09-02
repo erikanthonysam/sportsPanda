@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = @user.name
+    @games = @user.line_items.all.sort! { |a,b| a.game.date <=> b.game.date }
 
     respond_to do |format|
       format.html # show.html.erb

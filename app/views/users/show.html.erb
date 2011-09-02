@@ -17,7 +17,7 @@
 	
 		
 		<ul>
-		<% @user.line_items.each do |item| %>
+		<% @games.each do |item| %>
 		<% if item.game.date > Time.now - 21600 %>
 		<li><%= item.game.name %>:
 		<%= item.game.date.strftime("%a, %b %d - %I:%M %P %Z") %></li>
