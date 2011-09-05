@@ -92,8 +92,17 @@
 	  <li><%= link_to "Contact Us", contact_path %></li>
       <li><%= link_to "Blog", "http://channelthegame.wordpress.com", :target => "_blank" %></li>
       <li><%= link_to "Twitter", "http://twitter.com/#!/channeltgame", :target => "_blank" %></li>
-	  <li><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=193373360728625&amp;xfbml=1"></script><fb:like href="www.channelthegame.com" send="true" layout="button_count" width="400" show_faces="false" font=""></fb:like></li>
-	
+	  <li><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=193373360728625&amp;xfbml=1"></script><fb:like href="www.channelthegame.com" send="true" layout="button_count" width="150" show_faces="false" font=""></fb:like></li><li><div id="plusone">
+	<g:plusone size="small" annotation="inline" width="400"></g:plusone>
+
+	<!-- Place this render call where appropriate -->
+	<script type="text/javascript">
+	  (function() {
+	    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	    po.src = 'https://apis.google.com/js/plusone.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	  })();
+	</script></li></div>
     </ul>
   </nav>
 </footer>
