@@ -1,13 +1,29 @@
 <h1><b>Game Schedule</b></h1>
-<h3><i>* This is pretty tedious right now...but we're working hard to make it easier to update!  Please bear with us.</i></h3>
+<h4><i>* Add the games that you'll be showing:</i></h4>
 
 <br>
 <% @games.each do |game| %>
 <% if game.date > Time.now - 21600 %>
+<div class="game">
 	<%= game.name %>:
 	<%= game.date.strftime("%a, %b %d - %I:%M %Z") %>
-	<%= button_to 'Add this Game', line_items_path( :game_id => game ) %>
-	<br>
+	<%= button_to 'Add this Game', line_items_path( :game_id => game ), :class=> "add_a_game" %>
+  <div class="result-wrapper"></div>
+</div>
+<br>
+<% end %>  
+<% end %>
 
-<% end %>
-<% end %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.add_a_game').live('click', function(e){
+      e.preventDefault();
+      var form = $(this).parents('form');
+      var url = $(form).attr('action');
+      var that = this;
+      $.post(url, $(form).serialize(), function(data){
+        $(that).parents('.game').find('.result-wrapper').html(data);
+      });
+    });
+  });
+</script>

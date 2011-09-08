@@ -49,11 +49,19 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(@line_item.user, :notice => 'Game added!') }
-        format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
+        if request.xhr?
+          format.html { render :partial => "line_items/result", :locals => { :success => true } }
+        else
+          format.html { redirect_to(@line_item.user, :notice => 'Game added!') }
+          format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
+        end
       else
-        format.html { redirect_to(@line_item.user, :notice => "You've already added this game!") }
-        format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
+        if request.xhr?
+          format.html { render :partial => "line_items/result", :locals => { :success => false } }
+        else
+          format.html { redirect_to(@line_item.user, :notice => "You've already added this game!") }
+          format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end
