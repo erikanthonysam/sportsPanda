@@ -25,7 +25,6 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @games = @game.line_items.all.sort! { |a,b| a.user.name <=> b.user.name }
-    
 
     respond_to do |format|
       format.html # show.html.erb

@@ -11,7 +11,7 @@
   </tr>
 
 <% @users.each do |user| %>
-	<% unless user.admin? == true %>
+	<% unless user.admin? == true || user.role? == true %>
     <td><%= link_to user.name, user %></td>
     <td><%= user.street %>, <%= user.city %>, <%= user.state %>, <%= user.zip %></td>
     <td><%= number_to_phone(user.phone) %></td>
