@@ -50,7 +50,11 @@ ActiveRecord::Schema.define(:version => 20110913233555) do
     t.string    "website"
   end
 
-  
+  create_table "sportsbars_users", :id => false, :force => true do |t|
+    t.integer "sportsbar_id"
+    t.integer "user_id"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
