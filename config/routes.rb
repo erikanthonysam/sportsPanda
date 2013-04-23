@@ -1,4 +1,6 @@
 Sportspanda::Application.routes.draw do
+  get "password_resets/new"
+
   resources :line_items
 
   get "schedule/index"
@@ -27,7 +29,7 @@ Sportspanda::Application.routes.draw do
   resources :users
   
   resources :sessions, :only => [:new, :create, :destroy]
-   
+     
   match '/about',       :to => 'pages#about'
   match '/contact',     :to => 'pages#contact'
   
