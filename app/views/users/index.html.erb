@@ -26,6 +26,10 @@
 <% end %>
 </table>
 
+<script type="text/javascript">
+    mixpanel.track("Game Page Loaded")
+</script>
+
 <br>
 <% if signed_in? && current_user.admin? %>
 	<%= link_to 'New User', new_user_path %>
